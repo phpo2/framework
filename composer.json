@@ -1,0 +1,16 @@
+{
+    "name": "phpo2/framework",
+    "description": "The Framework for Web Services.",
+    "keywords": ["framework", "phpo2", "web-services", "micro-framework"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPO2\\": "PHPO2/"
+        }
+    }
+}
