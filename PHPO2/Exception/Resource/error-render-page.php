@@ -27,7 +27,7 @@
 
             .flex-center {
                 align-items: center;
-                top: 200px;
+                top: 240px;
             }
 
             .position-ref {
@@ -103,7 +103,8 @@
             <div class="m-t-md">
                 <h3>Uncaught exception: <?php echo $exception['class'] ?></h3>
                 <h3>Thrown in <?php echo $exception['throw'] ?></h3>
-                    <h3>Line number: <?php echo $exception['line'] ?></h3>
+                <h3>Error Line number: <?php echo $exception['line'] ?></h3>
+                <h3>Status Code: <?php echo $exception['code'] ?></h3>
             </div>
                 <h3>Stack trace:</h3>
         </div>
