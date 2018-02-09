@@ -96,14 +96,14 @@
     <body>
         <header class="header bg-color">
             <div class="header-content top-left">
-                <h2>Exception Message: <?php echo $exceptionArray['message'] ?></h2>
+                <h2>Exception Message: <?php echo $exception['message'] ?></h2>
             </div>
         </header>
         <div class="messages">
             <div class="m-t-md">
-                <h3>Uncaught exception: <?php echo $exceptionArray['class'] ?></h3>
-                <h3>Thrown in <?php echo $exceptionArray['throw'] ?></h3>
-                    <h3>Line number: <?php echo $exceptionArray['line'] ?></h3>
+                <h3>Uncaught exception: <?php echo $exception['class'] ?></h3>
+                <h3>Thrown in <?php echo $exception['throw'] ?></h3>
+                    <h3>Line number: <?php echo $exception['line'] ?></h3>
             </div>
                 <h3>Stack trace:</h3>
         </div>
@@ -112,7 +112,7 @@
             <div class="code-trace">
                 <pre>
                     <code>
-                      <?php foreach (array_filter($exceptionArray['trace']) as $trace): ?>
+                      <?php foreach (array_filter($exception['trace']) as $trace): ?>
                           <?php echo '#' . $trace ?>
                       <?php endforeach ?>
                     </code>
