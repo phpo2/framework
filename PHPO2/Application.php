@@ -3,6 +3,7 @@
 namespace PHPO2;
 
 use PHPO2\Exception\PHPO2Exception;
+use PHPO2\Routing\Route;
 
 /**
 * 
@@ -24,6 +25,8 @@ class Application
 	public function run()
 	{
 		$this->exception();
+
+		$this->router();
 	}
 
 	/**
@@ -60,5 +63,12 @@ class Application
 	public function enableErrorReporting()
 	{
 		error_reporting(E_ALL | E_STRICT);
+	}
+
+	public function router()
+	{
+		$router = new Route;
+
+		$router->dispatch($_SERVER['REQUEST_URI']);
 	}
 }
