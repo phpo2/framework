@@ -109,7 +109,7 @@ class PHPO2Exception extends Exception
     {
         if (isset($exception)) {
             extract($exception);
-            include 'Resource/error-render-page.php';   
+            require_once 'Resource/error-render-page.php';   
         }
     }
 
