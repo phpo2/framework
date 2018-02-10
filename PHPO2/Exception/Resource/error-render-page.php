@@ -80,7 +80,7 @@
 
             code {
                 position: relative;
-                left: -350px;
+                left: -200px;
             }
 
             .footer {
@@ -96,7 +96,7 @@
     <body>
         <header class="header bg-color">
             <div class="header-content top-left">
-                <h2>Exception Message: <?php echo $exception['message'] ?></h2>
+                <h2> <?php echo isset($exception['type']) ? 'Fatal Error' : 'Exception Error' ?>  Message: <?php echo $exception['message'] ?></h2>
             </div>
         </header>
         <div class="messages">
@@ -112,11 +112,19 @@
             
             <div class="code-trace">
                 <pre>
-                    <code>
-                      <?php foreach (array_filter($exception['trace']) as $trace): ?>
-                          <?php echo '#' . $trace ?>
-                      <?php endforeach ?>
-                    </code>
+                    <?php if (isset($exception['fatal_trace'])): ?>
+                        <?php foreach ($exception['fatal_trace'] as $key => $trace): ?>
+                            <code>
+                                <?php echo '#'.$key.' '. trim($trace) ?>
+                           </code>
+                        <?php endforeach ?>
+                    <?php else: ?>
+                        <?php foreach (array_filter($exception['trace']) as $trace): ?>
+                            <code>
+                                <?php echo '#' . trim($trace) ?>
+                            </code>
+                        <?php endforeach ?>
+                    <?php endif ?>
                 </pre>
             </div>
         </div>
