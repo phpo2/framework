@@ -3,7 +3,7 @@
 namespace PHPO2;
 
 use PHPO2\Exception\PHPO2Exception;
-use PHPO2\Routing\Route;
+use PHPO2\Routing\RouteCompiler;
 
 /**
 * 
@@ -31,7 +31,8 @@ class Application
 
 	/**
 	 *
-	 * Load the Exception handler. Register framework exception handler and error reporter.
+	 * Load the Exception handler. Register framework 
+	 * exception handler and error reporter
 	 *
 	 * @return void
 	 */
@@ -44,7 +45,7 @@ class Application
 
 	/**
 	 *
-	 * Register PHPO2 framework exception handler.
+	 * Register PHPO2 framework exception handler
 	 *
 	 * @return void
 	 */
@@ -56,7 +57,7 @@ class Application
 
 	/**
 	 *
-	 * Enable all error reporting.
+	 * Enable all error reporting
 	 *
 	 * @return void
 	 */
@@ -65,10 +66,16 @@ class Application
 		error_reporting(E_ALL | E_STRICT);
 	}
 
+	/**
+	 *
+	 * Compile and callback all routes
+	 *
+	 * @return void
+	 */
 	public function router()
 	{
-		$router = new Route;
+		$route = new RouteCompiler;
 
-		$router->dispatch($_SERVER['REQUEST_URI']);
+		$route->compile();
 	}
 }
