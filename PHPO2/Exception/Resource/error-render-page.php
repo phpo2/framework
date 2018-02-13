@@ -59,6 +59,8 @@
             .header {
                 width: 100%;
                 height: 12%;
+                z-index: 999;
+                position: relative;
             }
 
             .bg-color {
