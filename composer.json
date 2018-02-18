@@ -8,9 +8,12 @@
         "php": ">=7.1",
         "phpo2/http": "1.0.*"
     },
+    "replace": {
+        "PHPO2\\Http\\": "self.version"
+    },
     "autoload": {
         "psr-4": {
-            "PHPO2\\": "PHPO2/"
+            "PHPO2\\": "src/PHPO2/"
         }
     }
 }
