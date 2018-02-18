@@ -7,16 +7,11 @@
 	"require": {
 		"php": ">=7.1",
 		"phpo2/http": "1.0.*",
-		"composer/installers": "~1.0"
+		"phpo2/test": "@dev"
 	},
 	"autoload": {
 		"psr-4": {
 			"PHPO2\\": "src/PHPO2/"
 		}
 	},
-	"extra": {
-		"installer-paths": {
-			"./phpo2/framework/vendor": ["phpo2/http"]
-		}
-	}
 }
