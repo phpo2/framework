@@ -1,20 +1,21 @@
 {
-    "name": "phpo2/framework",
-    "description": "The Framework for Web Services.",
-    "keywords": ["framework", "phpo2", "web-services", "micro-framework"],
-    "license": "MIT",
-    "type": "project",
-    "require": {
-        "php": ">=7.1",
-        "phpo2/http": "1.0.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "PHPO2\\": "src/PHPO2/"
-        }
-    },
-    "extra":{
-        "installer-paths":{
-        "./phpo2/framework/vendor": ["phpo2/http"]
-    }
+	"name": "phpo2/framework",
+	"description": "The Framework for Web Services.",
+	"keywords": ["framework", "phpo2", "web-services", "micro-framework"],
+	"license": "MIT",
+	"type": "project",
+	"require": {
+		"php": ">=7.1",
+		"phpo2/http": "1.0.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"PHPO2\\": "src/PHPO2/"
+		}
+	},
+	"extra": {
+		"installer-paths": {
+			"./phpo2/framework/vendor": ["phpo2/http"]
+		}
+	}
 }
