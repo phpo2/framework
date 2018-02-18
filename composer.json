@@ -12,5 +12,9 @@
         "psr-4": {
             "PHPO2\\": "src/PHPO2/"
         }
+    },
+    "extra":{
+        "installer-paths":{
+        "./phpo2/framework/vendor": ["phpo2/http"]
     }
 }
