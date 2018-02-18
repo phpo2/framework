@@ -13,5 +13,6 @@
 		"psr-4": {
 			"PHPO2\\": "src/PHPO2/"
 		}
-	}
+	},
+	"minimum-stability": "dev"
 }
