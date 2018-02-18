@@ -9,7 +9,7 @@
         "phpo2/http": "1.0.*"
     },
     "replace": {
-        "PHPO2\\Http\\": "1.0.*"
+        "PHPO2\\Http\\": "self.version"
     },
     "autoload": {
         "psr-4": {
