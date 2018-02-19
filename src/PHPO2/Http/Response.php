@@ -310,4 +310,16 @@ class Response implements ResponseInterface
 
         return $headers;
     }
+
+    /**
+     * Return the request headers
+     *
+     * @return void
+     */
+    public function loadHeaders()
+    {
+        foreach ($this->getHeaders() as $header) {
+            header($header);
+        }
+    }
 }
