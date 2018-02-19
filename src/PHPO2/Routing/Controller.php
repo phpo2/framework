@@ -10,6 +10,26 @@ use PHPO2\Exception\BadMethodCallException;
 abstract class Controller
 {    
     /**
+     * Before filter - called before an action method.
+     *
+     * @return void
+     */
+    protected function before()
+    {
+
+    }
+
+    /**
+     * After filter - called after an action method.
+     *
+     * @return void
+     */
+    protected function after()
+    {
+        
+    }
+    
+    /**
      * Execute an action on the controller.
      *
      * @param  string  $method
