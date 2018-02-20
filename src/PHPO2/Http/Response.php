@@ -312,7 +312,7 @@ class Response implements ResponseInterface
     }
 
     /**
-     * Return the request headers
+     * Return the response headers
      *
      * @return void
      */
