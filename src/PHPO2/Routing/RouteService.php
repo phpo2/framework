@@ -119,7 +119,7 @@ class RouteService
 	 */
 	public function responseContent()
 	{
-		echo $this->response->getContent();
+		print $this->response->getContent();
 	}
 
 }
