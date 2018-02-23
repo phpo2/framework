@@ -10,7 +10,10 @@
 	"autoload": {
 		"psr-4": {
 			"PHPO2\\": "src/PHPO2/"
-		}
+		},
+		"files": [
+			"src/PHPO2/Foundation/helpers.php"
+		]
 	},
 	"minimum-stability": "dev"
 }
