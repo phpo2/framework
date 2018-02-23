@@ -4,6 +4,7 @@ namespace PHPO2\Routing;
 
 use PHPO2\Routing\RouteFactory;
 use PHPO2\Routing\RouteCompiler;
+use PHPO2\Http\Response;
 
 /**
 * Route Service class
@@ -18,11 +19,19 @@ class RouteService
 	private $factory;
 
 	/**
+	 * Http response
+	 *
+	 * @var Request
+	 */
+	private $response;
+
+	/**
 	 * Route Service constructor
 	 */
 	public function __construct()
 	{
 		$this->factory  = new RouteFactory();
+		$this->response = new Response();
 	}
 
 	/**
@@ -36,7 +45,13 @@ class RouteService
 	{
 		if ($response['handler'] instanceof \Closure) {
 			
-		    echo call_user_func_array($response['handler'], $response['arguments']);
+		    $response = call_user_func_array($response['handler'], $response['arguments']);
+
+		    if (is_array($response)) {
+		    	$this->callbackIsArray(json_encode($response));
+		    } else {
+		    	$this->callback($response);
+		    }
 		} else {
 
 			$handler = $this->factory->parseControllerAndMethod($response['handler']);
@@ -47,17 +62,64 @@ class RouteService
 
 					$obj = new $handler[0];
 
-					if (method_exists($obj, $handler[1])) {
-						echo call_user_func_array([$obj, $handler[1]], $response['arguments']);	
+					$response = call_user_func_array([$obj, 'callAction'], [$handler[1], $response['arguments']]);
+
+					if (is_array($response)) {
+						$this->callbackIsArray(json_encode($response));
 					} else {
-						RouteCompiler::throwMethodNotFoundException($handler[0], $handler[1]);
-					}
+						$this->callback($response);
+					}	
 
 				} else {
 					RouteCompiler::throwClassNotFoundException($handler[0]);
 				}
 			}
 		}
+	}
+
+	/**
+	 * Callback is string
+	 *
+	 * @param string $content
+	 *
+	 * @return string
+	 */
+	public function callback($content)
+	{
+		$this->response->setContent($content);
+
+		$this->response->loadHeaders();
+
+		$this->responseContent();
+	}
+
+	/**
+	 * Callback is array
+	 *
+	 * @param array $content
+	 *
+	 * @return string | json
+	 */
+	public function callbackIsArray($content)
+	{
+
+		$this->response->setContent($content);
+		$this->response->setHeader('Content-Type', 'application/json');
+
+		$this->response->loadHeaders();
+
+		$this->responseContent();
+
+	}
+
+	/**
+	 * Response generate contents
+	 *
+	 * @return mixed
+	 */
+	public function responseContent()
+	{
+		print $this->response->getContent();
 	}
 
 }
