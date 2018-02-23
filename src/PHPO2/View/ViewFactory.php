@@ -9,8 +9,17 @@ use PHPO2\View\View;
 */
 class ViewFactory
 {
-	public static function render(View $view, $template)
+	/**
+	 * Block comment
+	 *
+	 * @param string $template
+	 * @param array $params
+	 *
+	 * @return mixed
+	 */
+	public static function render($template, $params)
 	{
-		return $view->render($template);
+		$view = new View; 
+		return $view->render($template, $params);
 	}
 }
