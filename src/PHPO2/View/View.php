@@ -139,7 +139,7 @@ class View
             throw new InvalidArgumentException("Duplicate template key found");
         }
 
-        if (!is_file($this->path . $template)) {
+        if (!is_file($this->path . $template . '.php')) {
             throw new RuntimeException("View cannot render `$template` because the template does not exist");
         }
 
@@ -147,7 +147,7 @@ class View
 
         try {
             ob_start();
-            $this->protectedIncludeScope($this->path . $template, $data);
+            $this->protectedIncludeScope($this->path . $template . '.php', $data);
             $output = ob_get_clean();
         } catch(\Throwable $e) {
             ob_end_clean();
