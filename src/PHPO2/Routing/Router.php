@@ -6,6 +6,7 @@ use PHPO2\Routing\RouteFactory;
 use PHPO2\Routing\RouteResolver;
 use PHPO2\Routing\RouteCompiler;
 use PHPO2\Routing\RouteService;
+use PHPO2\Http\Request;
 use PHPO2\Routing\Route;
 
 /**
@@ -221,13 +222,14 @@ class Router
 	 */
 	public function run()
 	{
-		$response = $this->resolve($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
+		$request  = new Request;
+		$response = $this->resolve($request->getUri(), $request->getMethod());
 		
 		switch ($response['code']) {
 			case Route::STATUS_METHOD_NOT_FOUND:
 				RouteCompiler::methodNotFoundException();
 				break;
-				
+
 		    case Route::STATUS_NOT_FOUND:
 		        RouteCompiler::notFoundException();
 		        break;
