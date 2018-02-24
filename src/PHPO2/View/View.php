@@ -180,6 +180,6 @@ class View
      */
     protected function protectedIncludeScope($template, array $data) {
         extract($data);
-        require_once func_get_arg(0);
+        include_once func_get_arg(0);
     }
 }
