@@ -11,6 +11,7 @@ class Route
 {
 	const STATUS_FOUND = 200;
 	const STATUS_NOT_FOUND = 404;
+	const STATUS_METHOD_NOT_FOUND = 405;
 
 	/**
 	 * Method of route

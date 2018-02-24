@@ -224,8 +224,12 @@ class Router
 		$response = $this->resolve($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
 		
 		switch ($response['code']) {
+			case Route::STATUS_METHOD_NOT_FOUND:
+				RouteCompiler::methodNotFoundException();
+				break;
+				
 		    case Route::STATUS_NOT_FOUND:
-		        RouteCompiler::throwNotFoundException();
+		        RouteCompiler::notFoundException();
 		        break;
 		    
 		    case Route::STATUS_FOUND:

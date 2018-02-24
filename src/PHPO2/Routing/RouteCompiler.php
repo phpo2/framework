@@ -4,6 +4,7 @@ namespace PHPO2\Routing;
 
 use PHPO2\Exceptions\InvalidArgumentException;
 use PHPO2\Exceptions\NotFoundException;
+use PHPO2\Exceptions\BadMethodCallException;
 use PHPO2\Routing\Router;
 
 /**
@@ -14,9 +15,9 @@ class RouteCompiler
 	/**
 	 * Throw an exception when 404 not found
 	 *
-	 * @return Exception InvalidArgumentException
+	 * @throws Exception InvalidArgumentException
 	 */
-	public static function throwNotFoundException()
+	public static function notFoundException()
 	{
 		self::responseCode(404);
 		throw new NotFoundException("404 Not found", 404);
@@ -27,7 +28,7 @@ class RouteCompiler
 	 *
 	 * @param string $class
 	 *
-	 * @return Exception InvalidArgumentException
+	 * @throws Exception InvalidArgumentException
 	 */
 	public static function throwClassNotFoundException($class)
 	{
@@ -39,15 +40,12 @@ class RouteCompiler
 	/**
 	 * Throw an exception class method dose not exist
 	 *
-	 * @param string $method
-	 * @param string $class
-	 *
-	 * @return Exception InvalidArgumentException
+	 * @throws Exception InvalidArgumentException
 	 */
-	public static function throwMethodNotFoundException($class, $method)
+	public static function methodNotFoundException()
 	{
-		self::responseCode(500);
-		throw new InvalidArgumentException("$class->$method does not exist", 500);
+		self::responseCode(405);
+		throw new BadMethodCallException("BadMethodCallException", 405);
 		
 	}
 

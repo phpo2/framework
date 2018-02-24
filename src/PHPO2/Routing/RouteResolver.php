@@ -46,20 +46,12 @@ class RouteResolver
 						}
 					}
 				}
-
-				return [
-					'code' => Route::STATUS_FOUND,
-					'handler' => $route->getAction(),
-					'arguments' => $argumentArray
-				];
+				return $this->getFoundRoute($route->getAction(), $argumentArray);
 			}
 		}
 
-		return [
-			'code' => Route::STATUS_NOT_FOUND,
-			'handler' => null,
-			'arguments' => []
-		];
+		return $this->methodAllowed($router, $requestedUri, $method);
+		
 	}
 
 	/**
@@ -82,5 +74,41 @@ class RouteResolver
 		}
 
 		return $arguments;
+	}
+
+	public function getFoundRoute($handler, $arguments)
+	{
+		return [
+			'code' => Route::STATUS_FOUND,
+			'handler' => $handler,
+			'arguments' => $arguments
+		];
+	}
+
+	public function routeNotFound()
+	{
+		return [
+			'code' => Route::STATUS_NOT_FOUND,
+			'handler' => null,
+			'arguments' => []
+		];
+	}
+
+	public function methodAllowed(Router $router, $uri, $method)
+	{
+		$routes = $router->getAllRoutes();
+
+		foreach ($routes as $route) {
+			if ($route->getUrl() === $uri) {
+				if ($route->getMethod() !== $method) {
+					return [
+						'code' => Route::STATUS_METHOD_NOT_FOUND,
+						'handler' => null,
+						'arguments' => []
+					];
+				}
+			}
+		}
+		return $this->routeNotFound();
 	}
 }
