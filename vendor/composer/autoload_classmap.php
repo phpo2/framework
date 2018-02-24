@@ -7,12 +7,12 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'PHPO2\\Application' => $baseDir . '/src/PHPO2/Application.php',
-    'PHPO2\\Exception\\BadMethodCallException' => $baseDir . '/src/PHPO2/Exception/BadMethodCallException.php',
-    'PHPO2\\Exception\\InvalidArgumentException' => $baseDir . '/src/PHPO2/Exception/InvalidArgumentException.php',
-    'PHPO2\\Exception\\NotFoundException' => $baseDir . '/src/PHPO2/Exception/NotFoundException.php',
-    'PHPO2\\Exception\\NotFoundHttpException' => $baseDir . '/src/PHPO2/Exception/NotFoundHttpException.php',
-    'PHPO2\\Exception\\PHPO2Exception' => $baseDir . '/src/PHPO2/Exception/PHPO2Exception.php',
-    'PHPO2\\Exception\\RouteException' => $baseDir . '/src/PHPO2/Exception/RouteException.php',
+    'PHPO2\\Exceptions\\BadMethodCallException' => $baseDir . '/src/PHPO2/Exceptions/BadMethodCallException.php',
+    'PHPO2\\Exceptions\\InvalidArgumentException' => $baseDir . '/src/PHPO2/Exceptions/InvalidArgumentException.php',
+    'PHPO2\\Exceptions\\NotFoundException' => $baseDir . '/src/PHPO2/Exceptions/NotFoundException.php',
+    'PHPO2\\Exceptions\\NotFoundHttpException' => $baseDir . '/src/PHPO2/Exceptions/NotFoundHttpException.php',
+    'PHPO2\\Exceptions\\PHPO2Exception' => $baseDir . '/src/PHPO2/Exceptions/PHPO2Exception.php',
+    'PHPO2\\Exceptions\\RouteException' => $baseDir . '/src/PHPO2/Exceptions/RouteException.php',
     'PHPO2\\Http\\CookieBuilder' => $baseDir . '/src/PHPO2/Http/CookieBuilder.php',
     'PHPO2\\Http\\Exceptions\\MissingRequestMetaVariableException' => $baseDir . '/src/PHPO2/Http/Exceptions/MissingRequestMetaVariableException.php',
     'PHPO2\\Http\\HttpCookie' => $baseDir . '/src/PHPO2/Http/HttpCookie.php',
@@ -30,4 +30,5 @@ return array(
     'PHPO2\\Routing\\RouteService' => $baseDir . '/src/PHPO2/Routing/RouteService.php',
     'PHPO2\\Routing\\Router' => $baseDir . '/src/PHPO2/Routing/Router.php',
     'PHPO2\\View\\View' => $baseDir . '/src/PHPO2/View/View.php',
+    'PHPO2\\View\\ViewFactory' => $baseDir . '/src/PHPO2/View/ViewFactory.php',
 );

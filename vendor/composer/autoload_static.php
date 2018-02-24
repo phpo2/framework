@@ -26,12 +26,12 @@ class ComposerStaticInit7f3fd90517cb69944b66c405c685e83f
 
     public static $classMap = array (
         'PHPO2\\Application' => __DIR__ . '/../..' . '/src/PHPO2/Application.php',
-        'PHPO2\\Exception\\BadMethodCallException' => __DIR__ . '/../..' . '/src/PHPO2/Exception/BadMethodCallException.php',
-        'PHPO2\\Exception\\InvalidArgumentException' => __DIR__ . '/../..' . '/src/PHPO2/Exception/InvalidArgumentException.php',
-        'PHPO2\\Exception\\NotFoundException' => __DIR__ . '/../..' . '/src/PHPO2/Exception/NotFoundException.php',
-        'PHPO2\\Exception\\NotFoundHttpException' => __DIR__ . '/../..' . '/src/PHPO2/Exception/NotFoundHttpException.php',
-        'PHPO2\\Exception\\PHPO2Exception' => __DIR__ . '/../..' . '/src/PHPO2/Exception/PHPO2Exception.php',
-        'PHPO2\\Exception\\RouteException' => __DIR__ . '/../..' . '/src/PHPO2/Exception/RouteException.php',
+        'PHPO2\\Exceptions\\BadMethodCallException' => __DIR__ . '/../..' . '/src/PHPO2/Exceptions/BadMethodCallException.php',
+        'PHPO2\\Exceptions\\InvalidArgumentException' => __DIR__ . '/../..' . '/src/PHPO2/Exceptions/InvalidArgumentException.php',
+        'PHPO2\\Exceptions\\NotFoundException' => __DIR__ . '/../..' . '/src/PHPO2/Exceptions/NotFoundException.php',
+        'PHPO2\\Exceptions\\NotFoundHttpException' => __DIR__ . '/../..' . '/src/PHPO2/Exceptions/NotFoundHttpException.php',
+        'PHPO2\\Exceptions\\PHPO2Exception' => __DIR__ . '/../..' . '/src/PHPO2/Exceptions/PHPO2Exception.php',
+        'PHPO2\\Exceptions\\RouteException' => __DIR__ . '/../..' . '/src/PHPO2/Exceptions/RouteException.php',
         'PHPO2\\Http\\CookieBuilder' => __DIR__ . '/../..' . '/src/PHPO2/Http/CookieBuilder.php',
         'PHPO2\\Http\\Exceptions\\MissingRequestMetaVariableException' => __DIR__ . '/../..' . '/src/PHPO2/Http/Exceptions/MissingRequestMetaVariableException.php',
         'PHPO2\\Http\\HttpCookie' => __DIR__ . '/../..' . '/src/PHPO2/Http/HttpCookie.php',
@@ -49,6 +49,7 @@ class ComposerStaticInit7f3fd90517cb69944b66c405c685e83f
         'PHPO2\\Routing\\RouteService' => __DIR__ . '/../..' . '/src/PHPO2/Routing/RouteService.php',
         'PHPO2\\Routing\\Router' => __DIR__ . '/../..' . '/src/PHPO2/Routing/Router.php',
         'PHPO2\\View\\View' => __DIR__ . '/../..' . '/src/PHPO2/View/View.php',
+        'PHPO2\\View\\ViewFactory' => __DIR__ . '/../..' . '/src/PHPO2/View/ViewFactory.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
