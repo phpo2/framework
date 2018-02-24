@@ -6,8 +6,9 @@ if (! function_exists('view')) {
 	/**
      * Get the evaluated view contents for the given view.
      *
-     * @param  string  $view
-     * @param  array   $data
+     * @param  string  $template
+     * @param  array   $params
+     * @param  string  $code
      *
      * @return mixed View
      */
@@ -15,4 +16,20 @@ if (! function_exists('view')) {
 	{
 		return ViewFactory::render($template, $params, $code);
 	}
+}
+
+if (! function_exists('response')) {
+     /**
+     * Get the evaluated view contents for the given view
+     *  with response status code.
+     *
+     * @param  string  $template
+     * @param  array   $code
+     *
+     * @return mixed View
+     */
+     function response($template, $code = 200)
+     {
+          return ViewFactory::render($template, [], $code);
+     }
 }
