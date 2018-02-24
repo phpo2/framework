@@ -122,7 +122,7 @@ class PHPO2Exception extends Exception
      */
     public static function log($exception)
     {
-    	$log = dirname(__DIR__) . '/../../../../logs/' . date('Y-m-d') . '.txt';
+    	$log = dirname(__DIR__) . './../logs/' . date('Y-m-d') . '.txt';
 
     	ini_set('error_log', $log);
 
