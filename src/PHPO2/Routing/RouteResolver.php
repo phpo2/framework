@@ -51,7 +51,7 @@ class RouteResolver
 		}
 
 		return $this->methodAllowed($router, $requestedUri, $method);
-		
+
 	}
 
 	/**
@@ -76,6 +76,14 @@ class RouteResolver
 		return $arguments;
 	}
 
+	/**
+	 * Get found route
+	 *
+	 * @param  string $handler
+	 * @param  array $arguments
+	 *
+	 * @return array
+	 */
 	public function getFoundRoute($handler, $arguments)
 	{
 		return [
@@ -85,6 +93,11 @@ class RouteResolver
 		];
 	}
 
+	/**
+	 * Return not found code
+	 *
+	 * @return array
+	 */
 	public function routeNotFound()
 	{
 		return [
@@ -94,6 +107,15 @@ class RouteResolver
 		];
 	}
 
+	/**
+	 * Get arguments
+	 *
+	 * @param  instance $router
+	 * @param  string $uri
+	 * @param  string $method
+	 *
+	 * @return array
+	 */
 	public function methodAllowed(Router $router, $uri, $method)
 	{
 		$routes = $router->getAllRoutes();
