@@ -2,7 +2,7 @@
 
 namespace PHPO2\Routing;
 
-use PHPO2\Routing\Exceptions\InvalidArgumentException;
+use PHPO2\Exceptions\InvalidArgumentException;
 
 /**
  * Route object

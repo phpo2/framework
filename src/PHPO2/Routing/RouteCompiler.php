@@ -2,8 +2,8 @@
 
 namespace PHPO2\Routing;
 
-use PHPO2\Exception\InvalidArgumentException;
-use PHPO2\Exception\NotFoundException;
+use PHPO2\Exceptions\InvalidArgumentException;
+use PHPO2\Exceptions\NotFoundException;
 use PHPO2\Routing\Router;
 
 /**

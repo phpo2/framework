@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPO2\Exception;
+namespace PHPO2\Exceptions;
 
 class InvalidArgumentException extends \Exception
 {

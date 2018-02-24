@@ -2,7 +2,7 @@
 
 namespace PHPO2;
 
-use PHPO2\Exception\PHPO2Exception;
+use PHPO2\Exceptions\PHPO2Exception;
 use PHPO2\Routing\RouteCompiler;
 
 /**
@@ -51,8 +51,8 @@ class Application
 	 */
 	public function registerHandler()
 	{
-		set_error_handler('PHPO2\Exception\PHPO2Exception::errorHandler');
-		set_exception_handler('PHPO2\Exception\PHPO2Exception::exceptionHandler');
+		set_error_handler('PHPO2\Exceptions\PHPO2Exception::errorHandler');
+		set_exception_handler('PHPO2\Exceptions\PHPO2Exception::exceptionHandler');
 	}
 
 	/**

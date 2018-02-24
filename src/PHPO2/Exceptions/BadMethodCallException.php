@@ -1,8 +1,8 @@
 <?php 
 
-namespace PHPO2\Exception;
+namespace PHPO2\Exceptions;
 
-use PHPO2\Exception\PHPO2Exception;
+use PHPO2\Exceptions\PHPO2Exception;
 
 /**
 * 

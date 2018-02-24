@@ -2,7 +2,7 @@
 
 namespace PHPO2\Routing;
 
-use PHPO2\Exception\BadMethodCallException;
+use PHPO2\Exceptions\BadMethodCallException;
 
 /**
  * Abstract controller
