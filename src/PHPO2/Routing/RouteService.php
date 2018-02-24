@@ -88,8 +88,6 @@ class RouteService
 	{
 		$this->response->setContent($content);
 
-		$this->response->loadHeaders();
-
 		$this->responseContent();
 	}
 
