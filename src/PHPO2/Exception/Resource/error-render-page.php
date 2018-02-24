@@ -106,7 +106,9 @@
                 <h3>Uncaught exception: <?php echo $exception['class'] ?></h3>
                 <h3>Thrown in <?php echo $exception['throw'] ?></h3>
                 <h3>Error Line number: <?php echo $exception['line'] ?></h3>
-                <h3>Status Code: <?php echo $exception['code'] ?></h3>
+                <?php if (isset($exception['code'])): ?>
+                    <h3>Status Code: <?php echo $exception['code'] ?></h3>    
+                <?php endif ?>
             </div>
                 <h3>Stack trace:</h3>
         </div>

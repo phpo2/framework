@@ -43,7 +43,7 @@ class PHPO2Exception extends Exception
                 $error[0]['args'][1], 
                 array_filter($error[0]['args']), 
                 'ErrorException', $error[0]['line'], 
-                500
+                null
             );
         }
     }
