@@ -20,8 +20,7 @@ class RouteCompiler
 	 */
 	public static function notFoundException()
 	{
-		self::responseCode(404);
-		throw new NotFoundException("404 Not found", 404);
+		return response('errors.404', 404);
 	}
 
 	/**
