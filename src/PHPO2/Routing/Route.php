@@ -72,6 +72,8 @@ class Route
 	 * @param array $method
 	 *
 	 * @return $this
+	 *
+	 * @throws InvalidArgumentException
 	 */
 	public function setMethod($method)
 	{
@@ -106,6 +108,8 @@ class Route
 	 * @param string $url
 	 *
 	 * @return $this
+	 *
+	 * @throws InvalidArgumentException
 	 */
 	public function setUrl($url)
 	{
@@ -134,6 +138,8 @@ class Route
 	 * @param string|function $action
 	 *
 	 * @return $this
+	 *
+	 * @throws InvalidArgumentException
 	 */
 	public function setAction($action)
 	{
