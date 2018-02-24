@@ -5,6 +5,7 @@ namespace PHPO2\Routing;
 use PHPO2\Exceptions\InvalidArgumentException;
 use PHPO2\Exceptions\NotFoundException;
 use PHPO2\Exceptions\BadMethodCallException;
+use PHPO2\Http\Response;
 use PHPO2\Routing\Router;
 
 /**
@@ -58,7 +59,8 @@ class RouteCompiler
 	 */
 	public static function responseCode($code)
 	{
-		http_response_code($code);
+		$response = new Response;
+		$response->setStatusCode($code);
 	}
 
 	/**
