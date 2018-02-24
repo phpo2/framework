@@ -75,7 +75,7 @@ class View
 
         $response->loadHeaders();
 
-        return $response->getContent();
+        print $response->getContent();
     }
 
     /**
