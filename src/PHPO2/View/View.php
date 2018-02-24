@@ -33,6 +33,16 @@ class View
      */
     public function __construct()
     {
+        $this->loadTemplatePath();
+    }
+
+    /**
+     * Load views template folder
+     *
+     * @return string
+     */
+    public function loadTemplatePath()
+    {
         $this->path = rtrim('./../app/Views/', '/\\') . '/';
     }
 
@@ -53,6 +63,8 @@ class View
      */
     public function render($template, array $data = [])
     {
+        $template = str_replace('.', '/', $template);
+
         $output = $this->fetch($template, $data);
 
         $response = new Response;
@@ -168,6 +180,6 @@ class View
      */
     protected function protectedIncludeScope($template, array $data) {
         extract($data);
-        include_once func_get_arg(0);
+        require_once func_get_arg(0);
     }
 }
