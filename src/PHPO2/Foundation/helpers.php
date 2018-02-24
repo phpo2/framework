@@ -11,8 +11,8 @@ if (! function_exists('view')) {
      *
      * @return mixed View
      */
-	function view($template, $params = array())
+	function view($template, $params = array(), $code = 200)
 	{
-		return ViewFactory::render($template, $params);
+		return ViewFactory::render($template, $params, $code);
 	}
 }

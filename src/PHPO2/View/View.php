@@ -61,13 +61,15 @@ class View
      * @throws InvalidArgumentException
      * @throws RuntimeException
      */
-    public function render($template, array $data = [])
+    public function render($template, array $data = [], $code)
     {
         $template = str_replace('.', '/', $template);
 
         $output = $this->fetch($template, $data);
 
         $response = new Response;
+
+        $response->setStatusCode($code);
 
         $response->setContent($output);
 
@@ -180,6 +182,6 @@ class View
      */
     protected function protectedIncludeScope($template, array $data) {
         extract($data);
-        include_once func_get_arg(0);
+        @include_once func_get_arg(0);
     }
 }

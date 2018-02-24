@@ -17,9 +17,9 @@ class ViewFactory
 	 *
 	 * @return mixed
 	 */
-	public static function render($template, $params)
+	public static function render($template, $params, $code)
 	{
 		$view = new View; 
-		return $view->render($template, $params);
+		return $view->render($template, $params, $code);
 	}
 }
